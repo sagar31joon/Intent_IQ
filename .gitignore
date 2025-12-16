@@ -1,5 +1,5 @@
 venv/
-models/voice_models
+models/voice_models/vosk/gigaspeech
 logs/
 core/__pycache__/
 intent_system/__pycache__/
