@@ -40,6 +40,7 @@ VOSK_MODEL_PATH = os.path.join(VOICE_MODEL_DIR, "vosk/gigaspeech")
 # EMBEDDINGS
 # =========================
 EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
+TRANSFORMER_PATH = os.path.join(MODEL_ROOT, "transformer_model")
 
 # =========================
 # AUDIO CONFIG

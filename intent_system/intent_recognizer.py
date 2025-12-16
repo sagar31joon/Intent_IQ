@@ -4,6 +4,7 @@ import os
 import json
 import joblib
 from sentence_transformers import SentenceTransformer
+from utils.ensure_transformer import get_transformer_model
 
 from core import config
 from core.logger import log
@@ -121,7 +122,7 @@ class IntentRecognizer:
         log.info(f"[Recognizer] Loading {self.model_type} model...")
 
         # Load embedding model
-        self.embedding_model = SentenceTransformer(config.EMBEDDING_MODEL_NAME)
+        self.embedding_model = get_transformer_model()
         log.info("[Recognizer] Embedding model loaded.")
 
         # Load classifier

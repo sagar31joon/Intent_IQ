@@ -1,5 +1,4 @@
 venv/
-models/intent_models
 models/voice_models
 logs/
 core/__pycache__/

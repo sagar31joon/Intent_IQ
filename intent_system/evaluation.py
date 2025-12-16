@@ -7,6 +7,7 @@ import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.preprocessing import LabelEncoder
 from sentence_transformers import SentenceTransformer
+from utils.ensure_transformer import get_transformer_model
 
 from core import config
 from intent_system.preprocess import preprocess_text
@@ -90,7 +91,7 @@ def main():
             texts.append(cleaned)
             labels.append(l)
 
-    embedder = SentenceTransformer(config.EMBEDDING_MODEL_NAME)
+    embedder = get_transformer_model()
     embeddings = embedder.encode(texts)
 
     # IMPORTANT: temporary label encoder

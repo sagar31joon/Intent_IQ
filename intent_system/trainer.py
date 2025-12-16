@@ -7,6 +7,7 @@ import joblib
 
 from sklearn.preprocessing import LabelEncoder
 from sentence_transformers import SentenceTransformer
+from utils.ensure_transformer import get_transformer_model
 
 from core import config
 from core.logger import log
