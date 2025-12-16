@@ -1,10 +1,21 @@
+# Virtual env
 venv/
-models/voice_models
+
+# Logs
 logs/
+
+# Voice / audio (HUGE)
+models/voice_models/
+io_layer/advanced_io
+io_layer/stt_vosk.py
+ui/local_app.py
+
+# Python Junk
 core/__pycache__/
 intent_system/__pycache__/
 io_layer/__pycache__/
-io_layer/advanced_io/
 skills/__pycache__/
 *.pyc
+
+#OS Junk
 .DS_Store
