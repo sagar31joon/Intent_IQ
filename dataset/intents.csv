@@ -1,0 +1,39 @@
+text,intent
+hi,greeting
+hello,greeting
+hey there,greeting
+good morning,greeting
+good evening,greeting
+how are you,greeting
+hey lappy,greeting
+hello lappy,greeting
+what is the time,get_time
+tell me the time,get_time
+current time please,get_time
+what's the time right now,get_time
+lappy what time is it,get_time
+say the time,get_time
+open youtube,open_app
+open chrome,open_app
+launch spotify,open_app
+run calculator,open_app
+start notepad,open_app
+open whatsapp,open_app
+lappy open camera,open_app
+open settings,open_app
+what's the weather,weather_query
+tell me the weather,weather_query
+is it raining today,weather_query
+weather forecast please,weather_query
+lappy what's the temperature,weather_query
+stop,exit
+quit,exit
+exit program,exit
+shut down,exit
+terminate,exit
+i am bored,general_conversation
+tell me something,general_conversation
+how’s life,general_conversation
+i feel tired,general_conversation
+say something fun,general_conversation
+lappy talk to me,general_conversation

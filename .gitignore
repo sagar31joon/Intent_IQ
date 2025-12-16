@@ -1,0 +1,9 @@
+venv/
+models/
+logs/
+core/__pycache__/
+intent_system/__pycache__/
+io_layer/__pycache__/
+skills/__pycache__/
+*.pyc
+.DS_Store
