@@ -17,6 +17,7 @@ io_layer/stt_vosk.py
 ui/local_app.py
 
 # Python Junk
+__pycache__
 core/__pycache__/
 intent_system/__pycache__/
 io_layer/__pycache__/
