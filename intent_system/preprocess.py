@@ -13,7 +13,7 @@ WAKE_WORD = "lappy"
 
 # Common filler / noise words (can be excluded)
 FILLER_WORDS = {
-    "uh", "um", "umm", "please", "the", "a", "an"
+    "uh", "um", "umm", "please", "a", "an"
 }
 
 
