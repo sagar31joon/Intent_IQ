@@ -4,6 +4,9 @@ venv/
 # Logs
 logs/
 
+# Transformer model
+models/transformer_model/
+
 # Voice / audio (HUGE)
 models/voice_models/
 io_layer/advanced_io
