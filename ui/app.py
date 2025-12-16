@@ -5,6 +5,7 @@ import os
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(PROJECT_ROOT)
 
+import pandas as pd
 import streamlit as st
 from core import config
 from intent_system.intent_recognizer import IntentRecognizer
@@ -149,8 +150,16 @@ if st.button("Run Intent Recognition"):
 
     if probs is not None:
         st.write("### Intent Probabilities")
+
         labels = recognizer.label_encoder.classes_
-        prob_dict = {labels[i]: f"{float(p) * 100:.2f}%" for i, p in enumerate(probs)}
-        st.json(prob_dict)
+        probabilities = [float(p) * 100 for p in probs]
+
+        df = pd.DataFrame({
+            "Intent": labels,
+            "Probability (%)": [f"{p:.2f}%" for p in probabilities]
+        })
+
+        st.table(df)
+
 
 st.caption("Backend skill execution is disabled in this demo UI.")
