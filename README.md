@@ -315,6 +315,6 @@ Render will:
 ---
 
 # 🙌 Credits
-Built by **Sagar Joon**, with guidance and system refinement using AI-assisted architecture.  
+Built by **Sagar Joon**.  
 IntentIQ is designed as a modular showcase of ML engineering, inference systems, and UI integration.
 
