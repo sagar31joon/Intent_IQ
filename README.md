@@ -100,7 +100,8 @@ IntentIQ_Lappy/
 │   └── voice_models/
 │
 ├── ui/
-│   └── app.py           # Streamlit user interface
+│   ├── local_app.py         # streamlit user interface for local machine (includes STT) # Coming in future
+│   └── app.py           # Streamlit user interface for deployment
 │
 ├── skills/
 │   ├── greeting.py
