@@ -4,6 +4,9 @@ venv/
 # Logs
 logs/
 
+# Datasets
+dataset/
+
 # Transformer model
 models/transformer_model/
 
