@@ -4,23 +4,31 @@ import os
 import json
 import pandas as pd
 import joblib
+
 from sklearn.preprocessing import LabelEncoder
-from sklearn.linear_model import LogisticRegression
 from sentence_transformers import SentenceTransformer
 
 from core import config
 from core.logger import log
 from intent_system.preprocess import preprocess_text
 
+from intent_system.model_handlers import (
+    LogisticRegressionHandler,
+    SVCHandler,
+)
 
-# Extendable model registry
+
+# Register available models
 MODEL_REGISTRY = {
-    "LR": LogisticRegression(max_iter=2000),
-    # "SVC": SVC(probability=True),
-    # "NeuralNet": MLPClassifier(...)
+    "LR": LogisticRegressionHandler,
+    "SVC": SVCHandler,
+    # "NeuralNet": NeuralNetHandler   # later
 }
 
 
+# ================================================================
+# Dataset loader
+# ================================================================
 def load_dataset(dataset_name):
     path = os.path.join(config.DATASET_DIR, dataset_name)
     print(f"[TRAINER] Loading dataset: {dataset_name}")
@@ -41,16 +49,22 @@ def preprocess_dataset(df):
     return cleaned_texts, valid_labels
 
 
+# ================================================================
+# Embeddings
+# ================================================================
 def create_embeddings(texts):
     print(f"[TRAINER] Loading embedding model: {config.EMBEDDING_MODEL_NAME}")
-    model = SentenceTransformer(config.EMBEDDING_MODEL_NAME)
+    embedder = SentenceTransformer(config.EMBEDDING_MODEL_NAME)
 
     print("[TRAINER] Creating sentence embeddings...")
-    embeddings = model.encode(texts)
+    embeddings = embedder.encode(texts)
 
-    return embeddings, model
+    return embeddings
 
 
+# ================================================================
+# Versioning
+# ================================================================
 def get_next_version(model_type, prefix):
     model_dir = config.MODEL_TYPES[model_type]
     os.makedirs(model_dir, exist_ok=True)
@@ -65,7 +79,12 @@ def get_next_version(model_type, prefix):
     return max(versions) + 1 if versions else 1
 
 
-def save_artifacts(model_type, version, classifier, label_encoder, dataset_name, cleaned_texts, labels):
+# ================================================================
+# Save artifacts
+# ================================================================
+def save_artifacts(model_type, version, classifier, label_encoder,
+                   dataset_name, cleaned_texts, labels):
+
     model_dir = config.MODEL_TYPES[model_type]
 
     classifier_path = os.path.join(model_dir, f"classifier_v{version}.pkl")
@@ -93,20 +112,31 @@ def save_artifacts(model_type, version, classifier, label_encoder, dataset_name,
     log.info(f" → {metadata_path}")
 
 
+# ================================================================
+# Main trainer loop
+# ================================================================
 def main():
-    # Select model family
+
+    # -------------------------
+    # Select model
+    # -------------------------
     model_types = list(config.MODEL_TYPES.keys())
     print("\nAvailable Model Types:")
     for i, m in enumerate(model_types, 1):
         print(f"{i}. {m}")
 
-    model_choice = int(input("Select which model to train: "))
+    model_choice = int(input("Select model to train: "))
     model_type = model_types[model_choice - 1]
 
     if model_type not in MODEL_REGISTRY:
-        raise ValueError(f"[TRAINER] Model '{model_type}' not implemented yet.")
+        raise ValueError(f"[TRAINER] Model '{model_type}' not implemented.")
 
+    handler_class = MODEL_REGISTRY[model_type]
+    model_handler = handler_class()
+
+    # -------------------------
     # Select dataset
+    # -------------------------
     datasets = [f for f in os.listdir(config.DATASET_DIR) if f.endswith(".csv")]
     print("\nAvailable Datasets:")
     for i, d in enumerate(datasets, 1):
@@ -121,19 +151,23 @@ def main():
     label_encoder = LabelEncoder()
     encoded_labels = label_encoder.fit_transform(labels)
 
-    embeddings, _ = create_embeddings(cleaned_texts)
+    embeddings = create_embeddings(cleaned_texts)
 
-    classifier = MODEL_REGISTRY[model_type]
-    classifier.fit(embeddings, encoded_labels)
+    # -------------------------
+    # Train model
+    # -------------------------
+    classifier = model_handler.train(embeddings, encoded_labels)
 
+    # -------------------------
     # Save?
+    # -------------------------
     choice = input("\n[TRAINER] Save model? (Y/N): ").strip().lower()
     if choice in ("y", "yes"):
         version = get_next_version(model_type, "classifier")
         save_artifacts(model_type, version, classifier, label_encoder,
                        dataset_name, cleaned_texts, labels)
     else:
-        log.info("[TRAINER] Model not saved.")
+        log.info("[TRAINER] Model NOT saved.")
 
     log.info("\n[TRAINER] Training complete!")
 
