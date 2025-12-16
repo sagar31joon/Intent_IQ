@@ -145,7 +145,7 @@ class IntentIQEngine:
             # Probability visualization
             if probs is not None:
                 readable = {
-                    self.recognizer.label_encoder.classes_[i]: float(p)
+                    self.recognizer.label_encoder.classes_[i]: f"{float(p) * 100:.2f}%"
                     for i, p in enumerate(probs)
                 }
                 print("[Probabilities]", readable)
