@@ -1,0 +1,8 @@
+{
+    "model_type": "LR",
+    "version": 2,
+    "samples": 80,
+    "unique_labels": 8,
+    "embedding_model": "all-MiniLM-L6-v2",
+    "dataset_used": "intents2.csv"
+}
