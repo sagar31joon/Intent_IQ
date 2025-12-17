@@ -119,6 +119,9 @@ IntentIQ_Lappy/
 │   └── intent_iq.log
 │
 ├── dataset/
+│   ├── dataset_downloader.py       # Can download dataset from hugging face and save as csv file
+│   ├── EDA.py                      # For Exploratory Data Analysis
+│   ├── intents2.csv
 │   └── intents.csv
 │
 ├── main.py              # CLI entrypoint
