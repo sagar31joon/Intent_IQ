@@ -1,0 +1,32 @@
+query	intent	parameters,__index_level_0__,__index_level_1__
+" """"to_unit"""": """"cups""""}""","""Convert 500 milliliters to cups.""	unit_conversion	""{""""value"""": 500"," """"from_unit"""": """"milliliters"""""
+,"""Play a memory game.""	play_game	""{""""game_type"""": """"memory""""}""",
+,"""Recommend a book on fantasy.""	recommend_book	""{""""genre"""": """"fantasy""""}""",
+" """"action"""": """"turn_on""""}""","""Turn on the smart lights in the kitchen.""	manage_smart_home	""{""""device_name"""": """"smart lights"""""," """"location"""": """"kitchen"""""
+,"""What's the current time in Los Angeles?""	get_time	""{""""location"""": """"Los Angeles""""}""",
+,"""Give me a tip for improving upper body strength.""	fitness_tip	""{""""goal"""": """"upper body strength""""}""",
+,"""Find a recipe for a burger.""	find_recipe	""{""""dish_name"""": """"burger""""}""",
+,"""Recommend a podcast on politics.""	recommend_podcast	""{""""topic"""": """"politics""""}""",
+" """"to_unit"""": """"miles""""}""","""Convert 1000 meters to miles.""	unit_conversion	""{""""value"""": 1000"," """"from_unit"""": """"meters"""""
+,"""Play a puzzle-solving game.""	play_game	""{""""game_type"""": """"puzzle-solving""""}""",
+,"""Recommend a book on science fiction.""	recommend_book	""{""""genre"""": """"science fiction""""}""",
+" """"action"""": """"turn_off""""}""","""Turn off the smart TV in the bedroom.""	manage_smart_home	""{""""device_name"""": """"smart TV"""""," """"location"""": """"bedroom"""""
+,"""What's the fastest route to the nearest hospital?""	get_directions	""{""""origin"""": """"current location"""""," """"destination"""": """"nearest hospital""""}"""
+,"""Give me a tip for improving balance.""	fitness_tip	""{""""goal"""": """"improving balance""""}""",
+,"""Find a recipe for a pasta dish.""	find_recipe	""{""""dish_name"""": """"pasta dish""""}""",
+,"""Recommend a podcast on science and nature.""	recommend_podcast	""{""""topic"""": """"science and nature""""}""",
+" """"to_unit"""": """"cups""""}""","""Convert 1000 milliliters to cups.""	unit_conversion	""{""""value"""": 1000"," """"from_unit"""": """"milliliters"""""
+,"""Play a Sudoku game.""	play_game	""{""""game_type"""": """"Sudoku""""}""",
+,"""Recommend a book on romance.""	recommend_book	""{""""genre"""": """"romance""""}""",
+" """"action"""": """"turn_on""""}""","""Turn on the smart lights in the living room.""	manage_smart_home	""{""""device_name"""": """"smart lights"""""," """"location"""": """"living room"""""
+,"""What's the current time in Sydney?""	get_time	""{""""location"""": """"Sydney""""}""",
+,"""Give me a tip for improving cardiovascular health.""	fitness_tip	""{""""goal"""": """"cardiovascular health""""}""",
+,"""Find a recipe for a soup.""	find_recipe	""{""""dish_name"""": """"soup""""}""",
+,"""Recommend a podcast on science fiction.""	recommend_podcast	""{""""topic"""": """"science fiction""""}""",
+" """"to_unit"""": """"milliliters""""}""","""Convert 50 ounces to milliliters.""	unit_conversion	""{""""value"""": 50"," """"from_unit"""": """"ounces"""""
+,"""Play a word puzzle game.""	play_game	""{""""game_type"""": """"word puzzle""""}""",
+,"""Recommend a book on mystery.""	recommend_book	""{""""genre"""": """"mystery""""}""",
+" """"action"""": """"volume_up""""}""","""Turn up the volume on the smart speaker.""	manage_smart_home	""{""""device_name"""": """"smart speaker"""""," """"location"""": """"current"""""
+,"""What's the traffic like on the way to the train station?""	get_traffic_info	""{""""destination"""": """"train station""""}""",
+,"""Give me a tip for improving flexibility in the legs.""	fitness_tip	""{""""goal"""": """"leg flexibility""""}""",
+,"""Find a recipe for a smoothie bowl.""	find_recipe	""{""""dish_name"""": """"smoothie bowl""""}""",

@@ -1,0 +1,81 @@
+text,intent
+hello,greetings
+hi there,greetings
+hey,greetings
+good morning,greetings
+good evening,greetings
+hello assistant,greetings
+what's up,greetings
+hey buddy,greetings
+hi,greetings
+hello there,greetings
+tell me the time,get_time
+what time is it,get_time
+current time please,get_time
+what's the time now,get_time
+can you tell me the time,get_time
+time right now,get_time
+what time do we have,get_time
+tell me current time,get_time
+check the time,get_time
+give me the time,get_time
+open youtube,open_app
+launch spotify,open_app
+start gmail,open_app
+open whatsapp,open_app
+open the calendar,open_app
+please open chrome,open_app
+launch youtube,open_app
+start spotify,open_app
+open email app,open_app
+open my browser,open_app
+what's the weather,weather_query
+weather in delhi,weather_query
+is it going to rain today,weather_query
+what's the temperature,weather_query
+weather forecast for london,weather_query
+how's the weather outside,weather_query
+will it rain today,weather_query
+tell me the weather,weather_query
+weather in new york,weather_query
+current weather report,weather_query
+exit,exit
+quit,exit
+close the app,exit
+stop,exit
+goodbye,exit
+bye,exit
+see you later,exit
+shut down,exit
+end session,exit
+close everything,exit
+how are you,general_conversation
+what are you doing,general_conversation
+who are you,general_conversation
+what can you do,general_conversation
+tell me something interesting,general_conversation
+are you real,general_conversation
+do you like music,general_conversation
+talk to me,general_conversation
+what is your purpose,general_conversation
+are you intelligent,general_conversation
+play music,play_music
+play a song,play_music
+play believer,play_music
+play music by coldplay,play_music
+start playing music,play_music
+play my playlist,play_music
+play some songs,play_music
+play taylor swift,play_music
+play relaxing music,play_music
+play next song,play_music
+schedule a meeting,scheduling
+book an appointment,scheduling
+set up a meeting with john,scheduling
+schedule a call tomorrow,scheduling
+book a date on friday,scheduling
+add a meeting to my calendar,scheduling
+schedule an appointment,scheduling
+plan a meeting,scheduling
+book a meeting at 3 pm,scheduling
+schedule a discussion,scheduling
